@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MaisVoluntarios.Core
+﻿namespace MaisVoluntarios.Core
 {
     public class Empresa
     {
@@ -20,5 +14,22 @@ namespace MaisVoluntarios.Core
         public Telefone telefone { get; set; }
         public Tipo tipo { get; set; }
 
+        public Empresa()
+        {
+        }
+
+        public Empresa(int pId, string pNome, string pCnpj, string pEmail, string pData, string pDesc,
+            Cidade pCidade, Acesso pAcesso, Telefone pTel, Tipo pTipo)
+        {
+            idEmpresa = pId;
+            nomeEmpresa = pNome;
+            cnpjEmpresa = pCnpj;
+            dataFundada = pData;
+            descricao = pDesc;
+            cidade = pCidade;
+            acesso = pAcesso;
+            telefone = pTel;
+            tipo = pTipo;
+        }
     }
 }

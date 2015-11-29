@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MaisVoluntarios.Core
+﻿namespace MaisVoluntarios.Core
 {
     public class Atividade
     {
         public int idAtividade { get; set; }
         public string nomeAtividade { get; set; }
+
+        public Atividade(int pId, string pNome)
+        {
+            idAtividade = pId;
+            nomeAtividade = pNome;
+        }
     }
 }

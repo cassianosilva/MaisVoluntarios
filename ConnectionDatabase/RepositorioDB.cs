@@ -16,14 +16,14 @@ namespace ConnectionDatabase
         private void conectarDB()
         {
             Conn.ConnectionString = connString;
-            if (Conn.State != System.Data.ConnectionState.Open)
+            if (Conn.State != ConnectionState.Open)
             {
                 Conn.Open();
             }
         }
         private void desconectar()
         {
-            if (Conn.State == System.Data.ConnectionState.Open)
+            if (Conn.State == ConnectionState.Open)
             {
                 Conn.Close();
             }
@@ -59,8 +59,6 @@ namespace ConnectionDatabase
                 dr.Dispose();
                 throw ex;
             }
-
-
 
             return dr;
         }
