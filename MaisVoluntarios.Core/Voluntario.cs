@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MaisVoluntarios.Core
+﻿namespace MaisVoluntarios.Core
 {
     public class Voluntario
     {
@@ -14,10 +8,18 @@ namespace MaisVoluntarios.Core
         public string dataNascimento { get; set; }
         public string sexo { get; set; }
         public string email { get; set; }
+        public string status { get; set; }
         public Atividade atividade { get; set; }
+        public Afinidade afinidade { get; set; }
+        public ExtraVoluntario extraVoluntario { get; set; }
+        public AreaAtuacao areaDeAtuacao { get; set; }
         public Cidade cidade { get; set; }
         public Acesso acesso { get; set; }
         public Telefone telefone { get; set; }
-        public Tipo tipo { get; set; }
+        public Disponibilidade disponibilidade { get; set; }
+
+        public Voluntario()
+        {
+        }
     }
 }

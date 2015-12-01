@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MaisVoluntarios.Core
+﻿namespace MaisVoluntarios.Core
 {
     public class Empresa
     {
@@ -14,11 +8,16 @@ namespace MaisVoluntarios.Core
         public string email { get; set; }
         public string dataFundada { get; set; }
         public string descricao { get; set; }
+        public string ddd { get; set; }
+        public string telefone { get; set; }
         public Atividade atividade { get; set; }
+        public Necessidade necessidade { get; set; }
+        public ExtraEmpresa extraEmpresa { get; set; }
         public Cidade cidade { get; set; }
         public Acesso acesso { get; set; }
-        public Telefone telefone { get; set; }
-        public Tipo tipo { get; set; }
 
+        public Empresa()
+        {
+        }
     }
 }

@@ -1,0 +1,6 @@
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\ConnectionDatabase\bin\Debug\ConnectionDatabase.dll
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\ConnectionDatabase\bin\Debug\ConnectionDatabase.pdb
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\ConnectionDatabase\bin\Debug\MySql.Data.dll
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\ConnectionDatabase\obj\Debug\ConnectionDatabase.csprojResolveAssemblyReference.cache
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\ConnectionDatabase\obj\Debug\ConnectionDatabase.dll
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\ConnectionDatabase\obj\Debug\ConnectionDatabase.pdb

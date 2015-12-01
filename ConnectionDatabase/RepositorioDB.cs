@@ -11,19 +11,19 @@ namespace ConnectionDatabase
 
         public string connString
         {
-            get { return "Server=localhost;Database=voluntariado;Uid=root;Pwd=root;"; }
+            get { return "Server=localhost;Database=voluntariado;Uid=root;Pwd=1234;"; }
         }
         private void conectarDB()
         {
             Conn.ConnectionString = connString;
-            if (Conn.State != System.Data.ConnectionState.Open)
+            if (Conn.State != ConnectionState.Open)
             {
                 Conn.Open();
             }
         }
         private void desconectar()
         {
-            if (Conn.State == System.Data.ConnectionState.Open)
+            if (Conn.State == ConnectionState.Open)
             {
                 Conn.Close();
             }
@@ -43,6 +43,27 @@ namespace ConnectionDatabase
 
             desconectar();
         }
+
+        public int executarComandoScalar(MySqlCommand cmm)
+        {
+            int lastId;
+
+            conectarDB();
+            cmm.Connection = Conn;
+
+            try
+            {
+                lastId = (int)cmm.ExecuteScalar();
+            }
+            catch (MySqlException ex)
+            {
+                dr.Dispose();
+                throw ex;
+            }
+
+            return lastId;
+        }
+
         public MySqlDataReader executarConsulta(MySqlCommand cmm)
         {
 
@@ -59,8 +80,6 @@ namespace ConnectionDatabase
                 dr.Dispose();
                 throw ex;
             }
-
-
 
             return dr;
         }
