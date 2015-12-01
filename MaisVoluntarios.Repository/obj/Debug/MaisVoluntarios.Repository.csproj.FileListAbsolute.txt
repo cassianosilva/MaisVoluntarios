@@ -1,0 +1,10 @@
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios.Repository\bin\Debug\MaisVoluntarios.Repository.dll
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios.Repository\bin\Debug\MaisVoluntarios.Repository.pdb
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios.Repository\bin\Debug\ConnectionDatabase.dll
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios.Repository\bin\Debug\MaisVoluntarios.Core.dll
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios.Repository\bin\Debug\MySql.Data.dll
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios.Repository\bin\Debug\ConnectionDatabase.pdb
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios.Repository\bin\Debug\MaisVoluntarios.Core.pdb
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios.Repository\obj\Debug\MaisVoluntarios.Repository.csprojResolveAssemblyReference.cache
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios.Repository\obj\Debug\MaisVoluntarios.Repository.dll
+C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios.Repository\obj\Debug\MaisVoluntarios.Repository.pdb

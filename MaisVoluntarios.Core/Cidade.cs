@@ -6,13 +6,7 @@
         public string nomeCidade { get; set; }
         public string estado { get; set; }
         public string cep { get; set; }
-
-        public Cidade(int pId, string pNome, string pEstado, string pCep)
-        {
-            idCidade = pId;
-            nomeCidade = pNome;
-            estado = pEstado;
-            cep = pCep;
-        }
+        public Voluntario voluntario { get; set; }
+        public Empresa empresa { get; set; }
     }
 }

@@ -5,12 +5,8 @@
         public int idAcesso { get; set; }
         public string senha { get; set; }
         public string login { get; set; }
-
-        public Acesso(int pId, string pSenha, string pLogin)
-        {
-            idAcesso = pId;
-            senha = pSenha;
-            login = pLogin;
-        }
+        public int log { get; set; }
+        public Voluntario voluntario { get; set; }
+        public Empresa empresa { get; set; }
     }
 }
