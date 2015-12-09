@@ -107,10 +107,10 @@ namespace MaisVoluntarios.Repository
             
         }
 
-        public void Create(Acesso pAcesso)
+        public void CreateVoluntario(Acesso pAcesso)
         {
             sql.Append("INSERT INTO acesso (Senha, Login, idVoluntario) " +
-                "values ('@Senha, @Login, @idV");
+                "values (@Senha, @Login, @idV)");
 
             cmm.CommandText = sql.ToString();
             cmm.Parameters.AddWithValue("@Senha", pAcesso.senha);
@@ -120,7 +120,19 @@ namespace MaisVoluntarios.Repository
             db.executarComando(cmm);
             sql.Clear();
         }
+        public void CreateEmpresa(Acesso pAcesso)
+        {
+            sql.Append("INSERT INTO acesso (Senha, Login, idEmpresa) " +
+                "values (@Senha, @Login, @idV)");
 
+            cmm.CommandText = sql.ToString();
+            cmm.Parameters.AddWithValue("@Senha", pAcesso.senha);
+            cmm.Parameters.AddWithValue("@Login", pAcesso.login);
+            cmm.Parameters.AddWithValue("@idV", pAcesso.empresa.idEmpresa);
+
+            db.executarComando(cmm);
+            sql.Clear();
+        }
         public void Update(Acesso pAcesso)
         {
             sql.Append("UPDATE acesso " +

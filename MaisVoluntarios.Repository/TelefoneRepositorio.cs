@@ -14,7 +14,7 @@ namespace MaisVoluntarios.Repository
         public void Create(Telefone pTelefone)
         {
             sql.Append("INSERT INTO telefone (dddTelefone, telefone, dddCelular, celular, idVoluntario) " +
-                "VALUES (@dddTelefone, @telefone, @$dddCelular, @celular, @idV)");
+                "VALUES (@dddTelefone, @telefone, @dddCelular, @celular, @idV)");
 
             cmm.CommandText = sql.ToString();
             cmm.Parameters.AddWithValue("@dddTelefone", pTelefone.dddTelefone);

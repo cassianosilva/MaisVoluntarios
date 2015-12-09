@@ -223,7 +223,21 @@ namespace MaisVoluntarios.Repository
             cmm.Parameters.AddWithValue("@ddd", pEmpresa.ddd);
             cmm.Parameters.AddWithValue("@telefone", pEmpresa.telefone);
 
-            pEmpresa.idEmpresa = db.executarComandoScalar(cmm);
+            db.executarComando(cmm);
+            sql.Clear();
+
+            sql.Append("SELECT idEmpresa, nomeEmpresa, cnpjEmpresa from empresa " +
+                "Where cnpjEmpresa = @cnpjE and nomeEmpresa = @nomeE");
+
+
+            cmm.CommandText = sql.ToString();
+            cmm.Parameters.AddWithValue("@nomeE", pEmpresa.nomeEmpresa);
+            cmm.Parameters.AddWithValue("@cnpjE", pEmpresa.cnpjEmpresa);
+
+            MySqlDataReader dr = db.executarConsulta(cmm);
+            dr.Read();
+            pEmpresa.idEmpresa = (int)dr["idEmpresa"];
+
             sql.Clear();
 
             pEmpresa.cidade.empresa = pEmpresa;
@@ -231,9 +245,9 @@ namespace MaisVoluntarios.Repository
             pEmpresa.acesso.empresa = pEmpresa;
             pEmpresa.extraEmpresa.empresa = pEmpresa;
 
-            cidadeDAO.Create(pEmpresa.cidade);
+            cidadeDAO.CreateEmpresa(pEmpresa.cidade);
             necessidadeDAO.Create(pEmpresa.necessidade);
-            acessoDAO.Create(pEmpresa.acesso);
+            acessoDAO.CreateEmpresa(pEmpresa.acesso);
             extraDAO.Create(pEmpresa.extraEmpresa);
         }
 

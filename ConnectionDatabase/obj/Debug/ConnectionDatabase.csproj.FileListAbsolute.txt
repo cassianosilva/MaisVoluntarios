@@ -9,4 +9,3 @@ C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\ConnectionDatabase\bin\Debu
 C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\ConnectionDatabase\bin\Debug\MySql.Data.dll
 C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\ConnectionDatabase\obj\Debug\ConnectionDatabase.dll
 C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\ConnectionDatabase\obj\Debug\ConnectionDatabase.pdb
-C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\ConnectionDatabase\obj\Debug\ConnectionDatabase.csprojResolveAssemblyReference.cache
