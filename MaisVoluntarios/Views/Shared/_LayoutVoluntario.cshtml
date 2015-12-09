@@ -1,4 +1,8 @@
-﻿<html>
+﻿@{
+    var nomeusuario = ViewBag.nomeusuario;
+
+}
+<html>
 
 <head>
 
@@ -11,13 +15,13 @@
     <title>Area do Voluntario</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="~/css/sb-admin.css" rel="stylesheet">
+    <link href="~/css/css/sb-admin.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="~/css/plugins/morris.css" rel="stylesheet">
+    <link href="~/css/css/plugins/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -26,7 +30,7 @@
 </head>
 
 <body>
-    
+
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -39,35 +43,44 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">Area do Voluntario</a>
+                <a class="navbar-brand" href="~/Home/Index">Area do Voluntario</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
-                        
+                        @foreach (MaisVoluntarios.Core.Mensagem item in (IEnumerable<MaisVoluntarios.Core.Mensagem>)TempData.Peek("msgs"))
+                        {
+
                         <li class="message-preview">
-                            
-                            <a href="#">
+
+                            <a href="~/Voluntario/Ler/@item.idMensagem">
                                 <div class="media">
                                     <span class="pull-left">
-                                        <img class="media-object" width="55dp" height="50dp" src="#" alt="">
+                                        <img class="media-object" width="55dp" height="50dp"  @string.Concat("src=","/img/perfili/",@item.empresa.idEmpresa,".jpg") alt="">
                                     </span>
                                     <div class="media-body">
                                         <h5 class="media-heading">
-                                            <strong></strong>
+                                            <strong>@item.empresa.nomeEmpresa</strong>
                                         </h5>
-
-                                        <p></p>
+                                        @if (item.mensagem.Count() > 15)
+                                        {
+                                            <p>@item.mensagem.Substring(0, 15)...</p>
+                                        }
+                                        else
+                                        {
+                                            <p>@item.mensagem</p>
+                                        }
                                     </div>
                                 </div>
                             </a>
                         </li>
-                        
+
+                        }
 
                         <li class="message-footer">
-                            <a href="#">Ver todas as Mensagens</a>
+                            <a href="~/Voluntario/Caixadeentrada">Ver todas as Mensagens</a>
                         </li>
                     </ul>
                 </li>
@@ -75,13 +88,13 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu alert-dropdown">
                         <li>
-                            <a href="#">Livre<span class="label label-default">L</span></a>
+                            <a href="~/Voluntario/Status/0">Livre<span class="label label-default">L</span></a>
                         </li>
                         <li>
-                            <a href="#">Ocupado<span class="label label-primary">O</span></a>
+                            <a href="~/Voluntario/Status/1">Ocupado<span class="label label-primary">O</span></a>
                         </li>
                         <li>
-                            <a href="#">Sendo Voluntario<span class="label label-success">V</span></a>
+                            <a href="~/Voluntario/Status/2">Sendo Voluntario<span class="label label-success">V</span></a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -90,22 +103,22 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                   
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>  <b class="caret"></b></a>
-                    
+
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> @nomeusuario <b class="caret"></b></a>
+
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="?adm=admPerfil"><i class="fa fa-fw fa-user"></i> Perfil</a>
+                            <a href="~/Voluntario/Perfil"><i class="fa fa-fw fa-user"></i> Perfil</a>
                         </li>
                         <li>
-                            <a href="?adm=admE"><i class="fa fa-fw fa-envelope"></i> Mensagens</a>
+                            <a href="~/Voluntario/Caixadeentrada"><i class="fa fa-fw fa-envelope"></i> Mensagens</a>
                         </li>
                         <li>
-                            <a href="?adm=admG"><i class="fa fa-fw fa-gear"></i> Configuração</a>
+                            <a href="~/Voluntario/Foto"><i class="fa fa-fw fa-gear"></i> Configuração</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="pags/logout.php"><i class="fa fa-fw fa-power-off"></i> Sair</a>
+                            <a href="~/Voluntario/Logout"><i class="fa fa-fw fa-power-off"></i> Sair</a>
                         </li>
                     </ul>
 
@@ -115,32 +128,32 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i> Visão Geral</a>
+                        <a href="~/Voluntario/Index"><i class="fa fa-fw fa-dashboard"></i> Visão Geral</a>
                     </li>
                     <li>
-                        <a href="?adm=admP"><i class="fa fa-fw fa-bar-chart-o"></i> Vagas Publicadas</a>
+                        <a href="~/Voluntario/Vagas"><i class="fa fa-fw fa-bar-chart-o"></i> Vagas Publicadas</a>
                     </li>
 
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-envelope"></i> Mensagens<i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
-                                <a href="?adm=admE"><i class="fa fa-fw fa-send"></i>Caixa de Entrada</a>
+                                <a href="~/Voluntario/Caixadeentrada"><i class="fa fa-fw fa-send"></i>Caixa de Entrada</a>
                             </li>
                             <li>
-                                <a href="?adm=admS"><i class="fa fa-fw fa-edit"></i>Caixa de Saida</a>
+                                <a href="~/Voluntario/Caixadesaida"><i class="fa fa-fw fa-edit"></i>Caixa de Saida</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="?adm=admPerfil"><i class="fa fa-fw fa-desktop"></i> Perfil</a>
+                        <a href="~/Voluntario/Perfil"><i class="fa fa-fw fa-desktop"></i> Perfil</a>
                     </li>
                     <li>
-                        <a href="?adm=admG"><i class="fa fa-fw fa-wrench"></i> Gerenciar Conta</a>
+                        <a href="~/Voluntario/Foto"><i class="fa fa-fw fa-wrench"></i> Gerenciar Conta</a>
                     </li>
 
                     <li>
-                        <a href="pags/logout.php"><i class="fa fa-fw fa-power-off"></i> Sair</a>
+                        <a href="~/Voluntario/Logout"><i class="fa fa-fw fa-power-off"></i> Sair</a>
                     </li>
                 </ul>
             </div>
@@ -148,7 +161,7 @@
         </nav>
 
         <div>
-        
+            @RenderBody()
         </div>
 
 

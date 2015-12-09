@@ -1,0 +1,41 @@
+﻿@model MaisVoluntarios.Core.Mensagem
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Caixa de Entrada <small>mensagens recebidas</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li class="active">
+                        <i class="fa fa-e"></i> recebidas
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-envelope-o fa-fw"></i> Entrada</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover">
+                            
+                            <div class="form-group">
+                                <label>Voluntario</label><br>
+                                <label>@Model.voluntario.nomeVoluntario</label>
+                            </div>
+                            <div class="form-group">
+                                <label>Mensagem</label>
+                                <p>@Model.mensagem</p>
+                            </div>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

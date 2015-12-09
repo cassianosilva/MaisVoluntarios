@@ -52,6 +52,46 @@ namespace MaisVoluntarios.Repository
 
             return mensagens;
         }
+        public List<Mensagem> getAllVoluntarioPreview(int pId)
+        {
+            List<Mensagem> mensagens = new List<Mensagem>();
+
+            sql.Append("SELECT m.idMensagem, m.mensagem, m.status, m.idEmpresa, m.idVoluntario, e.nomeEmpresa " +
+                "FROM mensagem m " +
+                "INNER JOIN voluntario v ON v.idVoluntario = m.idVoluntario " +
+                "INNER JOIN empresa e ON e.idEmpresa = m.idEmpresa " +
+                "WHERE v.idVoluntario = @idV and m.status='0' " +
+                "ORDER BY m.idMensagem DESC");
+
+            cmm.CommandText = sql.ToString();
+            cmm.Parameters.AddWithValue("@idV", pId);
+            MySqlDataReader dr = db.executarConsulta(cmm);
+
+            while (dr.Read())
+            {
+                mensagens.Add(new Mensagem
+                {
+                    idMensagem = (int)dr["idMensagem"],
+                    mensagem = (string)dr["mensagem"],
+                    status = (int)dr["status"],
+                    empresa = new Empresa
+                    {
+                        idEmpresa = (int)dr["idEmpresa"],
+                        nomeEmpresa = (string)dr["nomeEmpresa"]
+                    },
+                    voluntario = new Voluntario
+                    {
+                        idVoluntario = (int)dr["idVoluntario"]
+                    }
+                });
+            }
+
+            dr.Close();
+            dr.Dispose();
+            sql.Clear();
+
+            return mensagens;
+        }
 
         public List<Mensagem> getAllEmpresa(int pId)
         {
@@ -98,7 +138,7 @@ namespace MaisVoluntarios.Repository
         {
             List<Mensagem> mensagens = new List<Mensagem>();
 
-            sql.Append("SELECT m.idMensagem, m.mensagem, m.status, m.idEmpresa, m.idVoluntario, v.nomeVoluntario " +
+            sql.Append("SELECT m.idMensagem, m.mensagem, m.status, m.idEmpresa, m.idVoluntario, v.nomeVoluntario, e.nomeEmpresa " +
                 "FROM mensagemempresa m " +
                 "INNER JOIN voluntario v ON v.idVoluntario = m.idVoluntario " +
                 "INNER JOIN empresa e ON e.idEmpresa = m.idEmpresa " +
@@ -118,7 +158,8 @@ namespace MaisVoluntarios.Repository
                     status = (int)dr["status"],
                     empresa = new Empresa
                     {
-                        idEmpresa = (int)dr["idEmpresa"]
+                        idEmpresa = (int)dr["idEmpresa"],
+                        nomeEmpresa = (string)dr["nomeEmpresa"]
                     },
                     voluntario = new Voluntario
                     {
@@ -351,10 +392,10 @@ namespace MaisVoluntarios.Repository
         {
             sql.Append("UPDATE mensagemempresa " +
                 "SET status = 1 " +
-                "WHERE idMensagem = @idM");
+                "WHERE idMensagem = @idMen");
 
             cmm.CommandText = sql.ToString();
-            cmm.Parameters.AddWithValue("@idM", pId);
+            cmm.Parameters.AddWithValue("@idMen", pId);
 
             db.executarComando(cmm);
             sql.Clear();

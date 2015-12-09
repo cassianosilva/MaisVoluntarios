@@ -1,0 +1,71 @@
+﻿@model IEnumerable<MaisVoluntarios.Core.Voluntario>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Voluntarios
+                </h1>
+                <ol class="breadcrumb">
+                    <li class="active">
+                        <i class="fa fa-e"></i>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="glyphicon glyphicon-th-list"></i> Voluntarios</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-hover">
+                            <tr>
+                                <th>Nome do Voluntario</th>
+                                <th>Telefone</th>
+                                <th>Atividade a Desempenhar</th>
+                                <th>Ação</th>
+                                <th>Status</th>
+                            </tr>
+                            @foreach (MaisVoluntarios.Core.Voluntario item in Model)
+                            {
+                                string st = item.status;
+                                string siti = null;
+                                if (st.Equals("0"))
+                                {
+                                    st = "btn-success";
+                                    siti = "Livre";
+                                }
+                                if (st.Equals("1"))
+                                {
+                                    st = "btn-info";
+                                    siti = "Ocupado";
+                                }
+                                if (st.Equals("2"))
+                                {
+                                    st = "btn-danger";
+                                    siti = "Sendo Voluntario";
+                                }
+                            <tr>
+                                <td><a class="btn btn-default col-lg-12" href="~/Instituicao/PerfilVoluntario/@item.idVoluntario">@item.nomeVoluntario</a></td>
+                                <td>(@item.telefone.dddTelefone) @item.telefone.telefone</td>
+                                <td>@item.atividade.nomeAtividade</td>
+                                <td><a href="~/Instituicao/Escrevermensagem/@item.idVoluntario" class="btn btn-success col-lg-8">Convidar</a></td>
+                                <td class="@string.Concat(@st)" disabled>@string.Concat(@siti)
+                                </td>
+                            </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

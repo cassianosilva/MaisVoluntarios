@@ -96,6 +96,13 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\creative.css" />
+    <Content Include="css\css\bootstrap-rtl.css" />
+    <Content Include="css\css\bootstrap-rtl.min.css" />
+    <Content Include="css\css\bootstrap.css" />
+    <Content Include="css\css\bootstrap.min.css" />
+    <Content Include="css\css\plugins\morris.css" />
+    <Content Include="css\css\sb-admin-rtl.css" />
+    <Content Include="css\css\sb-admin.css" />
     <Content Include="font-awesome\css\font-awesome.css" />
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
@@ -112,6 +119,10 @@
     <Content Include="img\header.jpg" />
     <Content Include="img\header.png" />
     <Content Include="img\maisvoluntarios.png" />
+    <Content Include="img\perfili\1.jpg" />
+    <Content Include="img\perfilv\10.jpg" />
+    <Content Include="img\perfilv\2.jpg" />
+    <Content Include="img\perfilv\9.jpg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\cbpAnimatedHeader.js" />
@@ -167,6 +178,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstituicaoController.cs" />
+    <Compile Include="Controllers\VoluntarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -185,7 +198,28 @@
     <Content Include="Views\Home\cadastrovoluntario.cshtml" />
     <Content Include="Views\Home\cadastroempresa.cshtml" />
     <Content Include="Views\Home\login.cshtml" />
+    <Content Include="Views\Shared\_LayoutInstituicao.cshtml" />
     <Content Include="Views\Shared\_LayoutVoluntario.cshtml" />
+    <Content Include="Views\Instituicao\Index.cshtml" />
+    <Content Include="Views\Instituicao\Vagas.cshtml" />
+    <Content Include="Views\Voluntario\Index.cshtml" />
+    <Content Include="Views\Voluntario\Foto.cshtml" />
+    <Content Include="Views\Voluntario\Caixadeentrada.cshtml" />
+    <Content Include="Views\Voluntario\Caixadesaida.cshtml" />
+    <Content Include="Views\Voluntario\Perfil.cshtml" />
+    <Content Include="Views\Voluntario\Vagas.cshtml" />
+    <Content Include="Views\Voluntario\PerfilInstituicao.cshtml" />
+    <Content Include="Views\Voluntario\Escrevermensagem.cshtml" />
+    <Content Include="Views\Voluntario\Ler.cshtml" />
+    <Content Include="Views\Voluntario\LerSaida.cshtml" />
+    <Content Include="Views\Instituicao\Caixadeentrada.cshtml" />
+    <Content Include="Views\Instituicao\Caixadesaida.cshtml" />
+    <Content Include="Views\Instituicao\Perfil.cshtml" />
+    <Content Include="Views\Instituicao\PerfilVoluntario.cshtml" />
+    <Content Include="Views\Instituicao\Foto.cshtml" />
+    <Content Include="Views\Instituicao\Escrevermensagem.cshtml" />
+    <Content Include="Views\Instituicao\Ler.cshtml" />
+    <Content Include="Views\Instituicao\LerSaida.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -196,6 +230,17 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\LayoutsPadroes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MaisVoluntarios.Core\MaisVoluntarios.Core.csproj">
+      <Project>{b516d3e7-da08-4402-80a3-3967c7910fc4}</Project>
+      <Name>MaisVoluntarios.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaisVoluntarios.Repository\MaisVoluntarios.Repository.csproj">
+      <Project>{bc24b174-4de0-4939-83e0-98c6f73cfcb6}</Project>
+      <Name>MaisVoluntarios.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

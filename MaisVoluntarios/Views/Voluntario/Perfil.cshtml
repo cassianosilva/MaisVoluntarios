@@ -1,0 +1,216 @@
+﻿@model MaisVoluntarios.Core.Voluntario
+@{
+    ViewBag.Title = "Perfil";
+}
+
+
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Atualizar dados <small> mantenha atualizado seus dados</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li class="active">
+                        <i class="fa fa-e"></i>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-e fa-desktop"></i> Perfil</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div>
+
+
+                            <form method="post" action="/Voluntario/Perfil">
+                                <input value="@Model.idVoluntario" name="idVoluntario" hidden="true"/>
+                                <div class="col-lg-12">
+                                    <h2>Atualizar dados do Voluntário</h2>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label>Nome *</label>
+                                    <input class="form-control" type="text" value="@Model.nomeVoluntario" name="nomeVoluntario">
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-4">
+                                        <label>CPF / CNPJ *</label>
+                                        <input class="form-control" type="text" value="@Model.cpfVoluntario" name="cpfVoluntario">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label>Data de nascimento *</label>
+                                        <input class="form-control" type="date" value="@Model.dataNascimento" name="dataNascimento">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label>Sexo *</label>
+                                        <div class="radio">
+                                            
+                                            <ul>
+                                                <label>
+                                                    <input type="radio" name="sexo" checked="checked" value="masculino" />Masculino
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="sexo" value="feminino" />Feminino
+                                                </label>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label>Email *</label>
+                                    <input class="form-control" type="mail" name="email" value="@Model.email">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-4">
+                                        <label>CEP *</label>
+                                        <input class="form-control" type="text" name="cidade.cep" value="@Model.cidade.cep">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label>Estado *</label>
+                                        <select class="form-control" name="cidade.estado">
+                                            <option value="@Model.cidade.estado">@Model.cidade.estado</option>
+                                            <option value="AC">Acre</option>
+                                            <option value="AL">Alagoas</option>
+                                            <option value="AP">Amapá</option>
+                                            <option value="AM">Amazonas</option>
+                                            <option value="BA">Bahia</option>
+                                            <option value="CE">Ceará</option>
+                                            <option value="DF">Distrito Federal</option>
+                                            <option value="ES">Espirito Santo</option>
+                                            <option value="GO">Goiás</option>
+                                            <option value="MA" >Maranhão</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MT">Mato Grosso</option>
+                                            <option value="MG">Minas Gerais</option>
+                                            <option value="PA">Pará</option>
+                                            <option value="PB">Paraíba</option>
+                                            <option value="PR">Paraná</option>
+                                            <option value="PE">Pernambuco</option>
+                                            <option value="PI">Piauí</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="RN">Rio Grande do Norte</option>
+                                            <option value="RS">Rio Grande do Sul</option>
+                                            <option value="RO">Rondônia</option>
+                                            <option value="RR">Roraima</option>
+                                            <option value="SC">Santa Catarina</option>
+                                            <option value="SP">São Paulo</option>
+                                            <option value="SE">Sergipe</option>
+                                            <option value="TO">Tocantins</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label>Cidade *</label>
+                                        <input class="form-control" type="text" value="@Model.cidade.nomeCidade" name="cidade.nomeCidade">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-2">
+                                        <label>DDD *</label>
+                                        <input class="form-control" type="text" value="@Model.telefone.dddTelefone" name="telefone.dddTelefone">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label>Telefone *</label>
+                                        <input class="form-control" type="text" value="@Model.telefone.telefone" name="telefone.telefone">
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <label>DDD</label>
+                                        <input class="form-control" type="text" value="@Model.telefone.dddCelular" name="telefone.dddCelular">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label>Celular</label>
+                                        <input class="form-control" type="text" value="@Model.telefone.celular" name="telefone.celular">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-group col-lg-6">
+                                        <label>Área em que você atua *</label>
+                                        <select class="form-control" name="areaDeAtuacao.areaT">
+                                            <option value="Tecnologia">Tecnologia</option>
+                                            <option value="Administração">Administração</option>
+                                            <option value="Gastronomia">Gastronomia</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-lg-6">
+                                        <label>Escolaridade *</label>
+                                        <select class="form-control" name="extravoluntario.escolaridade">
+                                            <option value="Fundamental">Fundamental</option>
+                                            <option value="Medio">Medio</option>
+                                            <option value="Superior">Superior</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-lg-8">
+                                    <label>Tipo de serviço voluntário</label>
+
+                                    <select class="form-control" name="atividade.idAtividade">
+                                        @foreach (MaisVoluntarios.Core.Atividade item in @ViewBag.atividades)
+                                        {
+                                            <option value="@item.idAtividade">@item.nomeAtividade</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-4">
+                                    <h3>Já foi voluntário?</h3>
+                                    <ul type="">
+                                        <label>
+                                            <input type="radio" name="extravoluntario.volJa" checked='true' value="sim">Sim
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="volJa" value="não">Não
+                                        </label>
+                                    </ul>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label>Publico que você tem afinidade</label>
+                                    <ul type="" class="form-group">
+                                        <label><input type="checkbox" name="afinidade.afinidade" checked='true' value="/Crianças/">Crianças </label>
+                                        <label><input type="checkbox" name="afinidade.afinidade" value="/Adolescentes/">Adolescentes </label>
+                                        <label><input type="checkbox" name="afinidade.afinidade" value="/Jovens/">Jovens </label>
+                                        <label><input type="checkbox" name="afinidade.afinidade" value="/Adultos/">Adultos </label>
+                                        <label><input type="checkbox" name="afinidade.afinidade" value="/Idosos/">Idosos</label>
+                                    </ul>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label>Porque quer ser Voluntário?</label>
+                                    <textarea class="form-control" name="extraVoluntario.descricao" value="@Model.extraVoluntario.descricao" rows="5" placeholder="Descrição">@Model.extraVoluntario.descricao</textarea>
+                                </div>
+                                <input value="@Model.idVoluntario" name="disponibilidade.voluntario.idVoluntario" hidden="true"/>
+                                <div class="form-group col-lg-12">
+                                    <label>Disponibilidade</label>
+                                    <select class="form-control" name="extravoluntario.disponibilidade">
+                                        <option value="entre 1 e 5 horas por mês" selected>entre 1 e 5 horas por mês</option>
+                                        <option value="entre 6 e 10 horas por mês">entre 6 e 10 horas por mês</option>
+                                        <option value="entre 10 e 20 horas por mês">entre 10 e 20 horas por mês</option>
+                                        <option value="mais que 20 horas por mês">mais que 20 horas por mês</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label>Usuário</label>
+                                    <input class="form-control" value="@Model.acesso.login" maxlength="15" type="text" placeholder="Usuario para logar no site" name="acesso.login">
+                                    <label>Senha</label>
+                                    <input class="form-control" value="@Model.acesso.senha" minlength="5" maxlength="15" placeholder="Senha para se logar no site" type="password" name="acesso.senha">
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <button class="btn btn-success form-group" type="submit">Atualizar</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

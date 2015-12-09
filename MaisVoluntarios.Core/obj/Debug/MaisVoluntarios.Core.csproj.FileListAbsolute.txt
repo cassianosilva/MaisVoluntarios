@@ -3,3 +3,8 @@ C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntar
 C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios.Core\bin\Debug\MaisVoluntarios.Core.pdb
 C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios.Core\obj\Debug\MaisVoluntarios.Core.dll
 C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios.Core\obj\Debug\MaisVoluntarios.Core.pdb
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios.Core\bin\Debug\MaisVoluntarios.Core.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios.Core\bin\Debug\MaisVoluntarios.Core.pdb
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios.Core\obj\Debug\MaisVoluntarios.Core.csprojResolveAssemblyReference.cache
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios.Core\obj\Debug\MaisVoluntarios.Core.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios.Core\obj\Debug\MaisVoluntarios.Core.pdb
