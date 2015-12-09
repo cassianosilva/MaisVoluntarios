@@ -19,7 +19,7 @@ namespace MaisVoluntarios.Repository
         {
             if (pAcesso.log == 1)
             {
-                sql.Append("SELECT a.idVoluntario, a.Senha, a.Login" +
+                sql.Append("SELECT a.idVoluntario, a.Senha, a.Login, v.nomeVoluntario " +
                     "FROM acesso a " +
                     "INNER JOIN voluntario v " +
                     "ON v.idVoluntario = a.idVoluntario " +
@@ -40,7 +40,8 @@ namespace MaisVoluntarios.Repository
                         senha = (string)dr["Senha"],
                         voluntario = new Voluntario
                         {
-                            idVoluntario = (int)dr["idVoluntario"]
+                            idVoluntario = (int)dr["idVoluntario"],
+                            nomeVoluntario = (string)dr["nomeVoluntario"]
                         }
                     };
 
@@ -61,10 +62,10 @@ namespace MaisVoluntarios.Repository
             }
             else
             {
-                sql.Append("SELECT a.idEmpresa, a.Senha, a.Login" +
+                sql.Append("SELECT a.idEmpresa, a.Senha, a.Login, e.nomeEmpresa " +
                     "FROM acesso a " +
                     "INNER JOIN empresa e " +
-                    "ON e.idVoluntario = a.idVoluntario " +
+                    "ON e.idEmpresa = a.idEmpresa " +
                     "WHERE a.Senha = @pass AND a.Login = @user");
 
                 cmm.CommandText = sql.ToString();
@@ -82,7 +83,8 @@ namespace MaisVoluntarios.Repository
                         senha = (string)dr["Senha"],
                         empresa = new Empresa
                         {
-                            idEmpresa = (int)dr["idEmpresa"]
+                            idEmpresa = (int)dr["idEmpresa"],
+                            nomeEmpresa = (string)dr["nomeEmpresa"]
                         }
                     };
 
@@ -129,6 +131,20 @@ namespace MaisVoluntarios.Repository
             cmm.Parameters.AddWithValue("@Senha", pAcesso.senha);
             cmm.Parameters.AddWithValue("@Login", pAcesso.login);
             cmm.Parameters.AddWithValue("@idV", pAcesso.voluntario.idVoluntario);
+
+            db.executarComando(cmm);
+            sql.Clear();
+        }
+        public void UpdateEmpresa(Acesso pAcesso)
+        {
+            sql.Append("UPDATE acesso " +
+                "SET Senha = @Senha,Login = @Login " +
+                "WHERE idVoluntario = @idV");
+
+            cmm.CommandText = sql.ToString();
+            cmm.Parameters.AddWithValue("@Senha", pAcesso.senha);
+            cmm.Parameters.AddWithValue("@Login", pAcesso.login);
+            cmm.Parameters.AddWithValue("@idV", pAcesso.empresa.idEmpresa);
 
             db.executarComando(cmm);
             sql.Clear();

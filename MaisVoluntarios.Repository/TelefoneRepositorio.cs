@@ -30,7 +30,7 @@ namespace MaisVoluntarios.Repository
         public void Update(Telefone pTelefone)
         {
             sql.Append("UPDATE telefone " +
-                "SET dddTelefone = @dddTelefone, telefone = @telefone, @dddCelular = @dddCelular, celular = @celular " +
+                "SET dddTelefone = @dddTelefone, telefone = @telefone, dddCelular = @dddCelular, celular = @celular " +
                 "WHERE idVoluntario = @idV");
 
             cmm.CommandText = sql.ToString();

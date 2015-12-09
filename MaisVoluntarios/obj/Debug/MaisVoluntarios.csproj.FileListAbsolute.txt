@@ -64,3 +64,43 @@ C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntar
 C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios\obj\Debug\MaisVoluntarios.csprojResolveAssemblyReference.cache
 C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios\obj\Debug\MaisVoluntarios.dll
 C:\Users\Note\Documents\Visual Studio 2015\Projects\MaisVoluntarios\MaisVoluntarios\obj\Debug\MaisVoluntarios.pdb
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\roslyn\csc.exe
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\roslyn\vbc.exe
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\roslyn\VBCSCompiler.exe
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\MaisVoluntarios.dll.config
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\MaisVoluntarios.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\MaisVoluntarios.pdb
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\MaisVoluntarios.Core.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\MaisVoluntarios.Repository.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\System.Web.Helpers.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\System.Web.Mvc.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\System.Web.Razor.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\System.Web.Webpages.Deployment.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\System.Web.Webpages.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\System.Web.Webpages.Razor.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\ConnectionDatabase.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\MySql.Data.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\MaisVoluntarios.Core.pdb
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\MaisVoluntarios.Repository.pdb
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\System.Web.Razor.xml
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\System.Web.Webpages.xml
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\System.Web.Webpages.Deployment.xml
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\System.Web.Webpages.Razor.xml
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\System.Web.Helpers.xml
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\System.Web.Mvc.xml
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\bin\ConnectionDatabase.pdb
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\obj\Debug\MaisVoluntarios.csprojResolveAssemblyReference.cache
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\obj\Debug\MaisVoluntarios.dll
+C:\Users\JoãoPaulo\Documents\GitHub\MaisVoluntarios\MaisVoluntarios\obj\Debug\MaisVoluntarios.pdb

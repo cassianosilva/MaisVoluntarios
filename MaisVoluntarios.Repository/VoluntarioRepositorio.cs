@@ -23,7 +23,7 @@ namespace MaisVoluntarios.Repository
         {
             List<Voluntario> voluntarios = new List<Voluntario>();
 
-            sql.Append("SELECT v.idVoluntario, v.nomeVoluntario, v.cpfVoluntario, v.dataNascimento, v.sexo, v.email, " +
+            sql.Append("SELECT v.idVoluntario, v.status, v.nomeVoluntario, v.cpfVoluntario, v.dataNascimento, v.sexo, v.email, " +
                 "t.dddTelefone, t.telefone, t.dddCelular, t.celular, a.afinidade, " +
                 "c.nomeCidade, c.estado, e.descricao, e.disponibilidade, att.nomeAtividade, aa.areaT " +
                 "FROM voluntario v " +
@@ -49,6 +49,7 @@ namespace MaisVoluntarios.Repository
                     dataNascimento = (string)dr["dataNascimento"],
                     sexo = (string)dr["sexo"],
                     email = (string)dr["email"],
+                    status = (string)dr["status"],
                     atividade = new Atividade { nomeAtividade = (string)dr["nomeAtividade"] },
                     cidade = new Cidade
                     {
@@ -152,7 +153,7 @@ namespace MaisVoluntarios.Repository
                     },
                     atividade = new Atividade
                     {
-                        nomeAtividade = (string)dr["nomeAtvidade"]
+                        nomeAtividade = (string)dr["nomeAtividade"]
                     }
                 });
             }
@@ -169,9 +170,9 @@ namespace MaisVoluntarios.Repository
             sql.Append("SELECT v.idVoluntario, v.nomeVoluntario, v.cpfVoluntario, v.dataNascimento, v.sexo, v.email, " +
                 "t.dddTelefone, t.telefone, t.dddCelular, t.celular, a.afinidade, c.nomeCidade, c.estado, " +
                 "e.descricao, e.disponibilidade, att.nomeAtividade, aa.areaT, c.cep, e.escolaridade, e.volJa, " +
-                "ac.Login, ac.Senha" +
+                "ac.Login, ac.Senha " +
                 "FROM voluntario v " +
-                "INNER JOIN telefone t ON t.idVoluntario = v.idVoluntario" +
+                "INNER JOIN telefone t ON t.idVoluntario = v.idVoluntario " +
                 "INNER JOIN afinidade a ON a.idVoluntario = v.idVoluntario " +
                 "INNER JOIN cidade c ON c.idVoluntario = v.idVoluntario " +
                 "INNER JOIN extravoluntario e ON e.idVoluntario = v.idVoluntario " +
@@ -291,7 +292,7 @@ namespace MaisVoluntarios.Repository
             sql.Append("UPDATE voluntario " +
                 "SET nomeVoluntario = @nomeVoluntario, cpfVoluntario = @cpfVoluntario, " +
                 "dataNascimento = @dataNascimento, sexo = @sexo, email = @email " +
-                "WHERE idVoluntario = @idV");
+                "WHERE idVoluntario = @idVol");
 
             cmm.CommandText = sql.ToString();
             cmm.Parameters.AddWithValue("@nomeVoluntario", pVoluntario.nomeVoluntario);
@@ -299,7 +300,8 @@ namespace MaisVoluntarios.Repository
             cmm.Parameters.AddWithValue("@dataNascimento", pVoluntario.dataNascimento);
             cmm.Parameters.AddWithValue("@sexo", pVoluntario.sexo);
             cmm.Parameters.AddWithValue("@email", pVoluntario.email);
-
+            cmm.Parameters.AddWithValue("@idVol", pVoluntario.idVoluntario);
+            int idvol = pVoluntario.idVoluntario;
             db.executarComando(cmm);
             sql.Clear();
 

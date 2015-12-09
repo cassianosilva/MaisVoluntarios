@@ -261,9 +261,9 @@ namespace MaisVoluntarios.Repository
             pEmpresa.acesso.empresa = pEmpresa;
             pEmpresa.extraEmpresa.empresa = pEmpresa;
 
-            cidadeDAO.Update(pEmpresa.cidade);
+            cidadeDAO.UpdateEmpresa(pEmpresa.cidade);
             necessidadeDAO.Update(pEmpresa.necessidade);
-            acessoDAO.Update(pEmpresa.acesso);
+            acessoDAO.UpdateEmpresa(pEmpresa.acesso);
             extraDAO.Update(pEmpresa.extraEmpresa);
         }
     }

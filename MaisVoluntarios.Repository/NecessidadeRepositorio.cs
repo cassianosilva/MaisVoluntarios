@@ -28,7 +28,7 @@ namespace MaisVoluntarios.Repository
         {
             sql.Append("UPDATE necessidade " +
                 "SET idAtividade = @idAtividade " +
-                "WHERE idEmpresa = @idEmp)");
+                "WHERE idEmpresa = @idEmp");
 
             cmm.CommandText = sql.ToString();
             cmm.Parameters.AddWithValue("@idAtividade", pNecessidade.atividade.idAtividade);

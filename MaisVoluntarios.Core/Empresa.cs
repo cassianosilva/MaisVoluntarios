@@ -7,7 +7,6 @@
         public string cnpjEmpresa { get; set; }
         public string email { get; set; }
         public string dataFundada { get; set; }
-        public string descricao { get; set; }
         public string ddd { get; set; }
         public string telefone { get; set; }
         public Atividade atividade { get; set; }

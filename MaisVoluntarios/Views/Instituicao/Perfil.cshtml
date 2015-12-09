@@ -1,0 +1,135 @@
+﻿@model MaisVoluntarios.Core.Empresa
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Atualizar dados <small> mantenha atualizado seus dados</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li class="active">
+                        <i class="fa fa-e"></i>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-e fa-desktop"></i> Perfil</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            <form method="post" action="~/Instituicao/Perfil">
+                                <input value="@Model.idEmpresa" hidden="true" name="idEmpresa"/>
+                                <div class="col-lg-12">
+                                    <h2>Atualizar Cadastro da Instituição</h2>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label>Nome *</label>
+                                    <input class="form-control" type="text" value="@Model.nomeEmpresa" name="nomeEmpresa">
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-6">
+                                        <label>CPF / CNPJ *</label>
+                                        <input class="form-control" type="text" value="@Model.cnpjEmpresa" name="cnpjEmpresa">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Data de Fundação</label>
+                                        <input class="form-control" type="date" value="@Model.dataFundada" name="dataFundada">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label>Email *</label>
+                                    <input class="form-control" type="mail" value="@Model.email" name="email">
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-4">
+                                        <label>CEP *</label>
+                                        <input class="form-control" type="text" value="@Model.cidade.cep" name="cidade.cep">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label>Estado *</label>
+                                        <select class="form-control" name="cidade.estado">
+                                            <option value="@Model.cidade.estado">@Model.cidade.estado</option>
+                                            <option value="AC">Acre</option>
+                                            <option value="AL">Alagoas</option>
+                                            <option value="AP">Amapá</option>
+                                            <option value="AM">Amazonas</option>
+                                            <option value="BA">Bahia</option>
+                                            <option value="CE">Ceará</option>
+                                            <option value="DF">Distrito Federal</option>
+                                            <option value="ES">Espirito Santo</option>
+                                            <option value="GO">Goiás</option>
+                                            <option value="MA">Maranhão</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MT">Mato Grosso</option>
+                                            <option value="MG">Minas Gerais</option>
+                                            <option value="PA">Pará</option>
+                                            <option value="PB">Paraíba</option>
+                                            <option value="PR">Paraná</option>
+                                            <option value="PE">Pernambuco</option>
+                                            <option value="PI">Piauí</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="RN">Rio Grande do Norte</option>
+                                            <option value="RS">Rio Grande do Sul</option>
+                                            <option value="RO">Rondônia</option>
+                                            <option value="RR">Roraima</option>
+                                            <option value="SC">Santa Catarina</option>
+                                            <option value="SP">São Paulo</option>
+                                            <option value="SE">Sergipe</option>
+                                            <option value="TO">Tocantins</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label>Cidade *</label>
+                                        <input class="form-control" type="text" value="@Model.cidade.nomeCidade" name="cidade.nomeCidade">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-2">
+                                        <label>DDD *</label>
+                                        <input class="form-control" type="text" value="@Model.ddd" name="ddd">
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label>Telefone *</label>
+                                        <input class="form-control" type="text" value="@Model.telefone" name="telefone">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label>Tipo de serviço voluntário que Necessita</label>
+                                    <select class="form-control" name="necessidade.atividade.idAtividade">
+                                       @foreach (MaisVoluntarios.Core.Atividade item in @ViewBag.atividades)
+                                       {
+                                        <option value="@item.idAtividade">@item.nomeAtividade</option>
+                                       
+                                       }
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label>Descreva sua Empresa *</label>
+                                    <textarea class="form-control" rows="5" placeholder="Descrição" value="@Model.extraEmpresa.descricao" name="extraEmpresa.descricao">@Model.extraEmpresa.descricao</textarea>
+                                    <input hidden="true" name="extraEmpresa.empresa.idEmpresa" value="@Model.idEmpresa"/>
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <label>Usuário</label>
+                                    <input class="form-control" maxlength="15" type="text" value="@Model.acesso.login" name="acesso.login">
+                                    <label>Senha</label>
+                                    <input class="form-control" minlength="5" maxlength="15" value="@Model.acesso.senha" type="password" name="acesso.senha">
+                                </div>
+                                <div class="form-group col-lg-12">
+                                    <button class="btn btn-success form-group" type="submit">Atualizar</button>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -27,7 +27,7 @@ namespace MaisVoluntarios.Repository
         public void Update(AreaAtuacao pArea)
         {
             sql.Append("UPDATE areadeatuacao " +
-                "SET areaT = @areaT" +
+                "SET areaT = @areaT " +
                 "WHERE idVoluntario = @idV");
 
             cmm.CommandText = sql.ToString();

@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 
 namespace ConnectionDatabase
@@ -11,7 +12,7 @@ namespace ConnectionDatabase
 
         public string connString
         {
-            get { return "Server=localhost;Database=voluntariado;Uid=root;Pwd=1234;"; }
+            get { return "Server=localhost;Database=voluntariado;Uid=root;Pwd=root;"; }
         }
         private void conectarDB()
         {
@@ -53,7 +54,7 @@ namespace ConnectionDatabase
 
             try
             {
-                lastId = (int)cmm.ExecuteScalar();
+                lastId =  Convert.ToInt32(cmm.ExecuteScalar());
             }
             catch (MySqlException ex)
             {

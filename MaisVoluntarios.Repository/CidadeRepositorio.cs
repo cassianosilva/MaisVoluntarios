@@ -41,5 +41,20 @@ namespace MaisVoluntarios.Repository
             db.executarComando(cmm);
             sql.Clear();
         }
+        public void UpdateEmpresa(Cidade pCidade)
+        {
+            sql.Append("UPDATE cidade " +
+                "SET nomeCidade = @nomeCidade, estado = @estado, cep = @cep " +
+                "WHERE idEmpresa = @idV");
+
+            cmm.CommandText = sql.ToString();
+            cmm.Parameters.AddWithValue("@nomeCidade", pCidade.nomeCidade);
+            cmm.Parameters.AddWithValue("@estado", pCidade.estado);
+            cmm.Parameters.AddWithValue("@cep", pCidade.cep);
+            cmm.Parameters.AddWithValue("@idV", pCidade.empresa.idEmpresa);
+
+            db.executarComando(cmm);
+            sql.Clear();
+        }
     }
 }
