@@ -25,6 +25,20 @@ namespace MaisVoluntarios.Repository
             db.executarComando(cmm);
             sql.Clear();
         }
+        public void CreateEmpresa(Cidade pCidade)
+        {
+            sql.Append("INSERT INTO cidade (nomeCidade, estado, cep, idEmpresa) " +
+                "VALUES (@nomeCidade, @estado, @cep, @idV)");
+
+            cmm.CommandText = sql.ToString();
+            cmm.Parameters.AddWithValue("@nomeCidade", pCidade.nomeCidade);
+            cmm.Parameters.AddWithValue("@estado", pCidade.estado);
+            cmm.Parameters.AddWithValue("@cep", pCidade.cep);
+            cmm.Parameters.AddWithValue("@idV", pCidade.empresa.idEmpresa);
+
+            db.executarComando(cmm);
+            sql.Clear();
+        }
 
         public void Update(Cidade pCidade)
         {

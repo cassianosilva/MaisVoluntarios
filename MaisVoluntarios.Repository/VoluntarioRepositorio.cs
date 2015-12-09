@@ -267,14 +267,28 @@ namespace MaisVoluntarios.Repository
             cmm.Parameters.AddWithValue("@sexo", pVoluntario.sexo);
             cmm.Parameters.AddWithValue("@email", pVoluntario.email);
 
-            pVoluntario.idVoluntario = db.executarComandoScalar(cmm);
+            db.executarComando(cmm);
+            sql.Clear();
+
+            sql.Append("SELECT idVoluntario, nomeVoluntario, cpfVoluntario from voluntario " +
+                "Where cpfVoluntario = @cpfV and nomeVoluntario = @nomeV");
+            
+                
+            cmm.CommandText = sql.ToString();
+            cmm.Parameters.AddWithValue("@nomeV", pVoluntario.nomeVoluntario);
+            cmm.Parameters.AddWithValue("@cpfV", pVoluntario.cpfVoluntario);
+
+                MySqlDataReader dr = db.executarConsulta(cmm);
+                dr.Read();
+            pVoluntario.idVoluntario = (int)dr["idVoluntario"];
+            
             sql.Clear();
 
             pVoluntario.telefone.voluntario = pVoluntario;
             pVoluntario.cidade.voluntario = pVoluntario;
             pVoluntario.areaDeAtuacao.voluntario = pVoluntario;
             pVoluntario.disponibilidade.voluntario = pVoluntario;
-            pVoluntario.disponibilidade.atividade = pVoluntario.atividade;
+            //pVoluntario.disponibilidade.atividade = pVoluntario.atividade;
             pVoluntario.extraVoluntario.voluntario = pVoluntario;
             pVoluntario.afinidade.voluntario = pVoluntario;
             pVoluntario.acesso.voluntario = pVoluntario;
@@ -285,6 +299,7 @@ namespace MaisVoluntarios.Repository
             extraDAO.Create(pVoluntario.extraVoluntario);
             afinidadeDAO.Create(pVoluntario.afinidade);
             disponibilidadeDAO.Create(pVoluntario.disponibilidade);
+            acessoDAO.CreateVoluntario(pVoluntario.acesso);
         }
 
         public void Update(Voluntario pVoluntario)

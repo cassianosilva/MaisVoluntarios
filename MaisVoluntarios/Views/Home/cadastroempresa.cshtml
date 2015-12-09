@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 text-center">
-            <form method="post" action="/cadastroempresa">
+            <form method="post" action="~/Home/cadastroempresa">
                 <div class="col-lg-12">
                     <h2>Cadastro de Instituição</h2>
                 </div>
@@ -85,7 +85,7 @@
                 <div class="form-group col-lg-12">
                     <label>Tipo de serviço voluntário que Necessita</label>
 
-                    <select class="form-control" name="necessidade.idAtividade">
+                    <select class="form-control" name="necessidade.atividade.idAtividade">
                         @foreach (MaisVoluntarios.Core.Atividade item in Model)
                         {
                         <option value="@item.idAtividade">@item.nomeAtividade</option>
@@ -94,7 +94,7 @@
                 </div>
                 <div class="form-group col-lg-12">
                     <label>Descreva sua Empresa *</label>
-                    <textarea class="form-control" rows="5" placeholder="Descrição" name="descricao"></textarea>
+                    <textarea class="form-control" rows="5" placeholder="Descrição" name="extraEmpresa.descricao"></textarea>
                 </div>
                 <div class="form-group col-lg-12">
                     <label>Usuário</label>

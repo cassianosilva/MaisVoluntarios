@@ -54,7 +54,7 @@ namespace ConnectionDatabase
 
             try
             {
-                lastId =  Convert.ToInt32(cmm.ExecuteScalar());
+                lastId =  (int)cmm.ExecuteScalar();
             }
             catch (MySqlException ex)
             {
